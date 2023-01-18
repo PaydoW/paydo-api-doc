@@ -1,41 +1,49 @@
 * [Back to contents](../Readme.md#contents)
 
-# Bearer Authentication
+# Bearer authentication
 
-* [Bearer Authentication](#bearer-authentication)
-* [Get authentication token](#get-authentication-token)
+Some requests to PayDo API require authentication.
 
-Several requests to Paydo API require authentication.
+PayDo API Authentication is based on JWT tokens and uses [Bearer Authentication](https://swagger.io/docs/specification/authentication/bearer-authentication/). The client must send this token in the `Authorization` header when making requests to protected resources:
 
-Paydo API Authentication based on JWT tokens and using [Bearer Authentication](https://swagger.io/docs/specification/authentication/bearer-authentication/).
-The client must send this token in the `Authorization` header when making requests to protected resources:
+![HEADERS](https://img.shields.io/badge/-Headers-darkviolet?style=for-the-badge)
 
-HTTP-Headers
+
 ```
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwMDAyIiwiYWNjZXNzVG9rZW4iOm51bGwsInRpbWUiOjE1NjY5MTk4NDJ9.jebGttoGUOGQORsPyr5smSbE01fEGDjFgUkBCF342sc
-``` 
+Authorization: Bearer YOUR_JWT_TOKEN
+```
 
-----
-**Note:** Authentication with `token` header to send token marked as **deprecated**. 
-This functionality may be removed in next major api version.
 
-----     
 
-## Get authentication token
 
-You can **create** and **view** your API keys in [your account](https://account.paydo.com/projects/jwt-token).
+---
+**Note:** <em>Authentication using a <code>token</code> header is deprecated. This functionality may be removed in the next major API version.</em>
 
-![Paydo JWT Tokens page](../images/paydo-jwt-page.png)
+---
 
-----
-**Note:** After creating token you will see it only once, right after create token.
-But you can create as many tokens as you need.
 
-----
 
-After **delete** token you can't authenticate with this token anymore.
+## Get an authentication token
 
-You can set token **expiration date**. After this date you can't authenticate with this token anymore.
-If expiration date is not set, the token can be used until it is deleted. 
+You can create and view your API keys in your account, using the Add new token button. You will have to enter the token “Name” and you may be required to enter your 2FA code if two-factor authentication has been set beforehand.
 
+
+
+![alt_text](../images/get_JWT_token_admin_panel.png)
+
+
+
+---
+
+**Note:** After creating a token you will see it **only once**, right after creating the token. However, you can create as many tokens as you need.
+
+
+---
+
+After the token **deletion**, you can't authenticate with this token anymore.
+
+You can set the token **expiration date**. After this date, you can't authenticate using this token anymore. If the expiration date is not set, the token can be used until it is deleted.
+
+
+## [→ API Response examples - Success response example](../Response/successResponse.md)

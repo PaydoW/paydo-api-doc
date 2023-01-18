@@ -1,34 +1,47 @@
 * [Back to contents](../Readme.md#contents)
 
-# Refund
+# Get merchant's refunds
 
-### Merchants refund transactions
 
-**Endpoint:**
+## Endpoint description:
 
-`GET https://paydo.com/v1/refunds/user-refunds`
+![Endpoint](https://img.shields.io/badge/-Endpoint-darkblue?style=for-the-badge)
 
-**Headers:**
- 
-    Content-Type: application/json
-    Authorization: Bearer eyJ0eXAiO...
 
-**Request example:**
+```
+GET https://paydo.com/v1/refunds/user-refunds
+```
 
-```shell script
+
+![HEADERS](https://img.shields.io/badge/-Headers-darkviolet?style=for-the-badge)
+
+
+```
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+```
+
+
+Request example:
+
+
+```php
 curl -X GET \
   https://paydo.com/v1/refunds/user-refunds \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV...
+    -H 'Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
-**Successful response example:**
+
+
+## Successful response example:
+
 
 ```json
 {
     "data": [
         {
-            "identifier": "38c92c25-33fd-4979-ac50-f73d7dbbf660",
+            "identifier": "38c92c25-5555-4444-aaaa-f73d7dbbf660",
             "status": 1,
             "type": 2,
             "userIdentifier": 10043,
@@ -37,7 +50,7 @@ curl -X GET \
             "createdAt": 1568105638,
             "updatedAt": null,
             "sourceTransaction": {
-                "identifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
+                "identifier": "c23b442d-dddd-2222-1111-6402cf4a8c09",
                 "walletIdentifier": "1806",
                 "type": 7,
                 "amount": 90.26,
@@ -47,7 +60,7 @@ curl -X GET \
                 "state": 2,
                 "commission": [
                   {
-                    "identifier": "65693",
+                    "identifier": "36363",
                     "type": 1,
                     "percent": 6,
                     "amount": 0.2414774,
@@ -57,11 +70,11 @@ curl -X GET \
                     "payerPercent": 0,
                     "merchantAmount": 6.24,
                     "payerAmount": 0,
-                    "transactionIdentifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
+                    "transactionIdentifier": "c23b442d-dd2c-2222-1111-6402cf4a8c09",
                     "currency": "USD"
                   },
                   {
-                    "identifier": "65694",
+                    "identifier": "36363",
                     "type": 4,
                     "percent": 3.5,
                     "amount": 0,
@@ -71,7 +84,7 @@ curl -X GET \
                     "payerPercent": 0,
                     "merchantAmount": 3.5,
                     "payerAmount": 0,
-                    "transactionIdentifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
+                    "transactionIdentifier":"c23b442d-1111-1111-b423-6402cf4a8c09",
                     "currency": "USD"
                   },
                   {
@@ -85,7 +98,7 @@ curl -X GET \
                     "payerPercent": 0,
                     "merchantAmount": 0,
                     "payerAmount": 0,
-                    "transactionIdentifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
+                    "transactionIdentifier":"c23b442d-dddd-5555-4444-6402cf4a8c09",
                     "currency": "USD"
                   },
                   {
@@ -99,7 +112,7 @@ curl -X GET \
                     "payerPercent": 0,
                     "merchantAmount": 0,
                     "payerAmount": 0,
-                    "transactionIdentifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
+                    "transactionIdentifier": "9999999-dd2c-5663-b423-6402cf4a8c09",
                     "currency": "GBP"
                   }
                 ],
@@ -110,8 +123,8 @@ curl -X GET \
                     "amountTo": 72.04,
                     "currencyTo": "Pound Sterling",
                     "rate": 0.72044500447036,
-                    "transactionIdentifier": "c23b442d-dd2c-5663-b423-6402cf4a8c09",
-                    "commissionIdentifier": "65696",
+                    "transactionIdentifier": "c23b442d-1111-1111-1111-6402cf4a8c09",
+                    "commissionIdentifier": "36363",
                     "accountFrom": "0",
                     "accountTo": "0"
                   }
@@ -132,21 +145,21 @@ curl -X GET \
                   },
                   {
                     "type": 9,
-                    "value": "UA"
+                    "value": "UK"
                   }
                 ],
                 "geoInformation": {
-                  "ip": "46.229.58.90",
+                  "ip": "46.219.58.90",
                   "city": {
-                    "name": "Kyiv"
+                    "name": "city"
                   },
                   "region": {
-                    "iso": "UA-30",
-                    "name": "Kyiv"
+                    "iso": "",
+                    "name": "region"
                   },
                   "country": {
-                    "iso": "UA",
-                    "name": "Ukraine"
+                    "iso": "",
+                    "name": "country"
                   },
                   "continent": {
                     "code": "EU"
@@ -154,7 +167,7 @@ curl -X GET \
                 },
                 "resultUrl": "https://successurl.om/",
                 "failUrl": "https://failurl.com",
-                "pid": "9cd4439e-fefc-4b83-a330-1a56dfeaad79",
+                "pid": "9cd4439e-1111-1111-1111-1a56dfeaad79",
                 "error": "",
                 "cardMetadata": {
                   "bin": "411111",
@@ -169,8 +182,8 @@ curl -X GET \
                 "castedAmount": 65.03,
                 "castedCurrency": "GBP",
                 "application": {
-                  "identifier": "12faa1dc-37cb-4889-9e0e-2f24eeecdcd0",
-                  "name": "MyNewProject 7_32_22",
+                  "identifier": "12faa1dc-1111-1111-1111-2f24eeecdcd0",
+                  "name": "MyNewProject",
                   "info": "non-specialized wholesale trade",
                   "midIdentifier": 9
                 }
@@ -180,7 +193,11 @@ curl -X GET \
         }
     ],
     "status": 1
-} 
+}
 ```
 
-You can see the description of statuses and types at the page [Get transaction](../Transaction/getTransaction.md)
+
+You can see the description of statuses and types by using the method from the following page [Get transaction](../Checkout/getTransaction.md)
+
+
+## [→ Wallet - Transfer Between Wallets](../Wallet/moveMoneyBetweenWalletsWithdrawal.md)
