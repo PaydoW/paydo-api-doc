@@ -278,9 +278,9 @@ curl -X POST \
     "paymentMethod": 204,
     "language": "en",
     "resultUrl": "https://your.site/result",
-    "failPath": "https://your.site/fail",
+    "failPath":  "https://your.site/fail",
     "productUrl": "https://your.site/redirect"
-   "metadata":[{
+    "metadata":[{
                 "TestData": "487",
                 "ProductName": "Item 1",
                 "ProductId": "547689"
