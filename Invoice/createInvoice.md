@@ -280,7 +280,12 @@ curl -X POST \
     "resultUrl": "https://your.site/result",
     "failPath": "https://your.site/fail",
     "productUrl": "https://your.site/redirect"
-}'
+   "metadata":[{
+                "TestData": "487",
+                "ProductName": "Item 1",
+                "ProductId": "547689"
+            }]
+ }'
 ```
 ---
 
