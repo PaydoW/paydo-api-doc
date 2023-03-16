@@ -43,29 +43,43 @@ Still, several IPN notifications should be accepted for a particular transaction
 
 ## IPN Request example
 
-
-```php
-Content-Type: application/json
+![Endpoint](https://img.shields.io/badge/-Endpoint-darkblue?style=for-the-badge)
+```
 POST https://url from your project
-{
-    "invoice": {
-        "id": "d024f697-ba2d-456f-910e-4d7fdfd338dd",
-        "txid": "dca59ca5-be19-470d-9494-9b76944e0241"
-    }, 
-    "transaction": {
-        "id": "dca59ca5-be19-470d-9494-9b76944e0241",
-        "state": 2,
-        "order": {
-            "id": "ANY_ORDER_ID"        
-        },
-        "error": {
-            "message": "3DS authorization error or 3DS cancelled by payer",
-            "code": ""
-        }
-    }
-}
 ```
 
+![HEADERS](https://img.shields.io/badge/-Headers-darkviolet?style=for-the-badge)
+```
+Content-Type: application/json
+```
+
+```json
+{
+  "invoice": {
+    "id": "d024f697-ba2d-456f-910e-4d7fdfd338dd",
+    "txid": "dca59ca5-be19-470d-9494-9b76944e0241",
+    "metadata": {
+      "internal merchant id": "example",
+      "any other merchant data which were passed to invoice on create it": {
+        "orderId": "test",
+        "amount": 3,
+        "customerId": 15487
+      }
+    }
+  },
+  "transaction": {
+    "id": "dca59ca5-be19-470d-9494-9b76944e0241",
+    "state": 2,
+    "order": {
+      "id": "ANY_ORDER_ID"
+    },
+    "error": {
+      "message": "3DS authorization error or 3DS canceled by payer",
+      "code": ""
+    }
+  }
+}
+```
 
 ![Parameters](https://img.shields.io/badge/-Parameters-gray?style=for-the-badge)
 
