@@ -82,6 +82,7 @@ Content-Type: application/json
 ```
 ---
 **Note:** You can pass the data you want in the "metadata" parameter when requesting to create an invoice and the data will come to you in the Instant Payment Notification (IPN)
+
 ---
 ![Parameters](https://img.shields.io/badge/-Parameters-gray?style=for-the-badge)
 
