@@ -52,7 +52,7 @@ POST https://url from your project
 ```
 Content-Type: application/json
 ```
-
+![BODY](https://img.shields.io/badge/-Body-darkblue?style=for-the-badge)
 ```json
 {
   "invoice": {
