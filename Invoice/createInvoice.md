@@ -85,7 +85,7 @@ Content-Type: application/json
 |productUrl|string|Used to redirect your payers back to your website\product page from the checkout page. (the "←" icon, on the checkout page)||
 |signature|string|[Signature](#signature)|*|
 |paymentMethod|string|Payment method_id selected for this invoice. One of [available payment methods](../Methods/getAvailablePaymentMethods.md)||
-
+|metadata|JSON| object	Arbitrary structure object to store any additional merchant data. Result JSON should be less than 800 kB||
 
 
 
