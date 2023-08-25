@@ -101,4 +101,4 @@ Content-Type: application/json
 Using transaction id (txid) you [can get the transaction](../Checkout/getTransaction.md) to find there your order id and process this order in your system.
 
 
-## [→ Refund - Create refund](../Refund/createRefund.md)
+## [→ IPN For transfers to PayDo customers](../Checkout/ipn_TBC.md)
