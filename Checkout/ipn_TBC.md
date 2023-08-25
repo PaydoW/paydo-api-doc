@@ -87,7 +87,7 @@ Content-Type: application/json
 | Parameter                |Type| Description                                          |
 |--------------------------|--- |------------------------------------------------------|
 | amount                   |string| Amount of funds transferred to the payer             |
-| identifierTxFrom        |string| Transaction identifier                               |
+| identifierTxFrom        |string| Transfers identifier                               |
 | status     |number| Transaction state  <br/>2 - Accepted<br/>3 - Rejected|
 
 
