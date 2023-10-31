@@ -49,19 +49,3 @@ Features of this type of integration:
 ![alt_text](../images/checkout_page_direct.png)
 
 
-
-## [3. Server-to-server (S2S) integration](../Integration/serverToServer.md)
-
-This is a direct integration, in which the checkout page and data entry for the PM is made by the merchant himself, using any of his designs and logos, and not our developments.
-
-To access this type of integration, the merchant must provide a document on PCI DSS LVL 1 or 2 (AOC form) compliance. The merchant on his side processes and stores the necessary data for payment. A special token is generated for card methods.
-
-Features of this type of integration:
-
-
-
-* _you can immediately transfer the payer's card data from your side for card methods (if you collect or store) in order to minimize the payment path_
-* _payment takes place on your side, without redirecting the payer to a third-party domain_
-* _displaying the checkout page in the language you need_
-* _you will need to use more requests when making payments (to create a card token and checkout transactions) for card methods in the integration settings_
-* _it is mandatory to obtain a PCI DSS level 1 or 2 (AOC form) compliance certificate for card methods_
