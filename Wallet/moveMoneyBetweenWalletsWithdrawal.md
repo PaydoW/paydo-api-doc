@@ -130,7 +130,7 @@ curl -X POST \
 
 The method described above can be used to make payouts to your customers' PayDo wallets, please see the following presumed realization flow:
  
-1) Your client requires funds to be transfered to his PayDo wallet. In this case, you will have to implement the functionality where the client can create a transfer request by filling in the information required for the transfer (PayDo wallet ID/e-mail/reference number, amount of withdrawal, and required currency, etc.) on your side. At this stage, you can implement additional restrictions that are needed. (automatic confirmation of transfers / manual confirmation of transfers / transferss only for verified users, etc.)
+1) Your client requires funds to be transferred to his PayDo wallet. In this case, you will have to implement the functionality where the client can create a transfer request by filling in the information required for the transfer (PayDo wallet ID/e-mail/reference number, amount of withdrawal, and required currency, etc.) on your side. At this stage, you can implement additional restrictions that are needed. (automatic confirmation of transfers / manual confirmation of transfers / transfers only for verified users, etc.)
 2) At the next stage, you will have to implement a functionality that will pass all arguments to the request payload encryption function, described [above](#request-payload-encryption). (Be advised that you can control `'startCurrency'` and `'insuranceCurrency'` depending on your merchant account balances) 
 3) The encrypted payload must be passed to the API request described [above](#endpoint-description).
 
