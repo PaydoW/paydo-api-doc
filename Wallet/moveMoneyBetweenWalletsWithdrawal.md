@@ -45,6 +45,7 @@ $data = [
     'insuranceCurrency' => 'EUR',
     'paymentMethodIdentifier' => 204,
     'accountType' => 1,
+    'metadata' => ['orderId' => 'b6b5afe9-a174-4eec-9e0b-c40f58112324'],
 ];
 
 $encryptedPayload = sodium_crypto_box_seal(json_encode($data), base64_decode($publicKeyCertificate));
@@ -66,15 +67,16 @@ See more examples [here](../Examples/apiCertificates) on how to encrypt.
 **Request body**
 
 
-|Parameter|Type|Required|Description|
-|--- |--- |--- |--- |
-|recipient|string|*|Recipient identifier (account ID),e-mail or reference number|
-|amount|string|*|Amount of funds.|
-|currency|string|*|Desired currency for transfer. This currency will be received by the recipient.|
-|startCurrency|string|*|The currency of the initiator of the transfer to be converted into the desired currency.|
-|insuranceCurrency|string||Currency from which funds will be charged in case there is not enough starting currency|
-|paymentMethodIdentifier|int|*|The payment method ID is always 204 at this moment. But in the future, we are going to add more methods.|
-|accountType|int||Recipient account type. Specify only when using email as a value of the referenceId. [personal - 1, business 2]|
+|Parameter|Type|Required| Description                                                                                                     |
+|--- |--- |--- |-----------------------------------------------------------------------------------------------------------------|
+|recipient|string|*| Recipient identifier (account ID),e-mail or reference number                                                    |
+|amount|string|*| Amount of funds.                                                                                                |
+|currency|string|*| Desired currency for transfer. This currency will be received by the recipient.                                 |
+|startCurrency|string|*| The currency of the initiator of the transfer to be converted into the desired currency.                        |
+|insuranceCurrency|string|| Currency from which funds will be charged in case there is not enough starting currency                         |
+|paymentMethodIdentifier|int|*| The payment method ID is always 204 at this moment. But in the future, we are going to add more methods.        |
+|accountType|int|| Recipient account type. Specify only when using email as a value of the referenceId. [personal - 1, business 2] |
+|metadata|JSON object|| Arbitrary structure object to store any additional merchant data. Result JSON should be less than 2kB       |
 
 
 
