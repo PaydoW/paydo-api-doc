@@ -66,7 +66,6 @@ How to process payments.
 
 
 
-* [Create checkout transaction](Checkout/createCheckoutTransaction.md)
 * [Check transaction status](Checkout/checkTransactionStatus.md)
 * [Card tokenization (*For Server-to-server integration only)](Checkout/createCardToken.md)
 * [Get transaction info](Checkout/getTransaction.md)
